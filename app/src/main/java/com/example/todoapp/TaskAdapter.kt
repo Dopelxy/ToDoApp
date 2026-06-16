@@ -36,17 +36,20 @@ class TaskAdapter(
         private val btnDelete: ImageButton = itemView.findViewById(R.id.btnDelete)
 
         fun bind(task: Task) {
+
+            cbDone.setOnCheckedChangeListener(null)
+
             tvTaskText.text = task.text
             cbDone.isChecked = task.isDone
 
-            // Обновляем зачёркивание
             if (task.isDone) {
-                tvTaskText.paintFlags = tvTaskText.paintFlags or android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
+                tvTaskText.paintFlags =
+                    tvTaskText.paintFlags or android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
             } else {
-                tvTaskText.paintFlags = tvTaskText.paintFlags and android.graphics.Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                tvTaskText.paintFlags =
+                    tvTaskText.paintFlags and android.graphics.Paint.STRIKE_THRU_TEXT_FLAG.inv()
             }
 
-            cbDone.setOnCheckedChangeListener(null)
             cbDone.setOnCheckedChangeListener { _, isChecked ->
                 task.isDone = isChecked
                 onDoneClick(task, isChecked)

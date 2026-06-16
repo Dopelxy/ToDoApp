@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
             onDoneClick = { task, isChecked ->
                 task.isDone = isChecked
                 saveTasks()
-                adapter.updateList(tasks.toList())
             }
         )
 
