@@ -13,7 +13,7 @@
 
 ### Главный экран
 
-![Главный экран](screenshots/main_screen.png)
+![Главный экран](screenshots/completed_task.png)
 
 ### Добавление задачи
 
@@ -21,7 +21,7 @@
 
 ### Выполненная задача
 
-![Выполненная задача](screenshots/completed_task.png)
+![Выполненная задача](screenshots/main_screen.png)
 
 ## Технологии
 
