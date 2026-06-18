@@ -51,7 +51,17 @@ class TaskAdapter(
             }
 
             cbDone.setOnCheckedChangeListener { _, isChecked ->
+
                 task.isDone = isChecked
+
+                if (isChecked) {
+                    tvTaskText.paintFlags =
+                        tvTaskText.paintFlags or android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
+                } else {
+                    tvTaskText.paintFlags =
+                        tvTaskText.paintFlags and android.graphics.Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                }
+
                 onDoneClick(task, isChecked)
             }
 
